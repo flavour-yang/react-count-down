@@ -1,12 +1,16 @@
 {
-  "name": "react-count-down",
+  "name": "react-hooks-count-down",
   "version": "0.1.0",
   "description": "react count down, hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "React",
+    "count down",
+    "hooks component count down"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,5 +25,7 @@
   },
   "dependencies": {
     "react": "^18.1.0"
-  }
+  },
+  "repository": "https://github.com/flavour-yang/react-count-down",
+  "homepage": "https://github.com/flavour-yang/react-count-down/example/index.html"
 }
