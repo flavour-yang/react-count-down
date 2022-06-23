@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>count down</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://unpkg.com/antd@4.21.3/dist/antd.min.css">
+  <link rel="text/less" href="https://unpkg.com/antd@4.21.3/dist/antd.less">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/moment@2.29.3/moment.js"></script>
+  <script src="https://unpkg.com/antd@4.21.3/dist/antd.min.js"></script>
+
+  <script src="../dist/index.js"></script>
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .container>div {
+      margin: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <script type="text/babel">
+    function App() {
+      return <div className='container' >
+        <div>
+          <CountDown></CountDown>
+        </div>
+        <div>
+          <CountDown
+            time={3 * 24 * 60 * 60 * 1000}
+            renderContent={({ time }) => (
+              <span>
+                {time.days}天 {time.hours}时 {time.minutes}分 {time.seconds}秒 {(time.milliseconds + '').slice(0, 2)}ms
+              </span>
+            )}
+          ></CountDown>
+        </div>
+        <div>
+          <CountDown time={60 * 60 * 1000} format={'DD天 hh:mm:ss:ms'}></CountDown>
+        </div>
+        <div>
+          <CountDown
+            actionRender={({ start, stop, run }) => (
+              <React.Fragment>
+                <antd.Button onClick={() => (run ? stop() : start())}>{run ? 'stop' : 'start'}</antd.Button>
+
+              </React.Fragment>
+            )}
+          ></CountDown>
+        </div>
+      </div>
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
