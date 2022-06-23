@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-count-down",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "react count down, hooks",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,5 @@
     "react": "^18.1.0"
   },
   "repository": "https://github.com/flavour-yang/react-count-down",
-  "homepage": "https://github.com/flavour-yang/react-count-down/example/index.html"
+  "homepage": "https://flavour-yang.github.io/react-count-down/example"
 }
