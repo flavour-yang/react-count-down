@@ -21,7 +21,7 @@ export default {
 		sourcemap: true,
 		exports: 'named'
 	}],
-	external:["react"],
+	// external:["react"],
 	plugins: [
 		peerDepsExternal(),
 		resolve(),
