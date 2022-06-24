@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-count-down",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "react count down, hooks",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
