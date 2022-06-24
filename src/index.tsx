@@ -22,7 +22,7 @@ interface Props {
 	actionRender?: (args: Content) => React.ReactNode
 }
 
-export const CountDown: React.FC<Props> = (props) => {
+const CountDown: React.FC<Props> = (props) => {
 	const { time = HOUR, getTime, renderContent, format, actionRender } = props
 	// 暂停时间
 	const countRef = useRef(time)
@@ -111,4 +111,4 @@ export const CountDown: React.FC<Props> = (props) => {
 	)
 }
 
-export default CountDown
+export default CountDown 

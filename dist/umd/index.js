@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.CountDown = {}, global.React));
-})(this, (function (exports, React) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react')) :
+  typeof define === 'function' && define.amd ? define(['react'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.CountDown = factory(global.React));
+})(this, (function (React) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -135,10 +135,7 @@
                   React__default["default"].createElement("button", { onClick: start }, "start"))))));
   };
 
-  exports.CountDown = CountDown;
-  exports["default"] = CountDown;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return CountDown;
 
 }));
 //# sourceMappingURL=index.js.map

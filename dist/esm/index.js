@@ -127,5 +127,5 @@ const CountDown = (props) => {
                 React.createElement("button", { onClick: start }, "start"))))));
 };
 
-export { CountDown, CountDown as default };
+export { CountDown as default };
 //# sourceMappingURL=index.js.map

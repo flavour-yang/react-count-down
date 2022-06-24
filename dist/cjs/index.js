@@ -135,6 +135,5 @@ const CountDown = (props) => {
                 React__default["default"].createElement("button", { onClick: start }, "start"))))));
 };
 
-exports.CountDown = CountDown;
 exports["default"] = CountDown;
 //# sourceMappingURL=index.js.map
