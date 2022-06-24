@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-count-down",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "react count down, hooks",
   "main": "./dist/umd/index.js",
   "module": "./dist/esm/index.js",
