@@ -36,13 +36,13 @@ export const formatTime = (format: string, currentTime: Timer) => {
     format = format.replace('DD', padZero(days.toString()))
   }
   if (format.includes('hh')) {
-    format = format.replace('hh', hours.toString())
+    format = format.replace('hh', padZero(hours.toString()))
   }
   if (format.includes('mm')) {
-    format = format.replace('mm', minutes.toString())
+    format = format.replace('mm', padZero(minutes.toString()))
   }
   if (format.includes('ss')) {
-    format = format.replace('ss', seconds.toString())
+    format = format.replace('ss', padZero(seconds.toString()))
   }
   if (format.includes('ms')) {
     const strMilliseconds = milliseconds.toString().slice(0, 2)

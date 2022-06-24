@@ -4,7 +4,7 @@
  * @Description:
  */
 import React, { ReactElement, useEffect, useRef, useState } from 'react'
-import { parseTime, HOUR, formatTime } from '../utils/index'
+import { parseTime, HOUR, formatTime, padZero } from '../utils/index'
 import type { Timer } from '../utils/index'
 
 interface Content {
@@ -34,10 +34,10 @@ const CountDown: React.FC<Props> = (props) => {
 	const refId = useRef(0)
 
 	const [renderTime, setRenderTime] = useState({
-		hour: 0,
-		minute: 0,
-		secound: 0,
-		millisecond: 0
+		hour: '0',
+		minute: '0',
+		secound: '0',
+		millisecond: '0'
 	})
 
 	const dateTime = +new Date()
@@ -46,10 +46,10 @@ const CountDown: React.FC<Props> = (props) => {
 		const getCurrentRemain = () => Math.max(endTime - Date.now(), 0)
 		const parse = parseTime(getCurrentRemain())
 
+
 		timeRender.current = getCurrentRemain()
 
-		setRenderTime({ hour: parse.hours, minute: parse.minutes, secound: parse.seconds, millisecond: parse.milliseconds })
-
+		setRenderTime({ hour: padZero(parse.hours), minute: padZero(parse.minutes), secound: padZero(parse.seconds), millisecond: padZero(parse.milliseconds, 3) })
 		const requestAnimationId = requestAnimationFrame(frameTime)
 		refId.current = requestAnimationId
 		if (!refRun.current) {

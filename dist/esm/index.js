@@ -69,10 +69,10 @@ const CountDown = (props) => {
     // 记录 requestAnimation id
     const refId = useRef(0);
     const [renderTime, setRenderTime] = useState({
-        hour: 0,
-        minute: 0,
-        secound: 0,
-        millisecond: 0
+        hour: '0',
+        minute: '0',
+        secound: '0',
+        millisecond: '0'
     });
     const dateTime = +new Date();
     const frameTime = () => {
@@ -80,7 +80,8 @@ const CountDown = (props) => {
         const getCurrentRemain = () => Math.max(endTime - Date.now(), 0);
         const parse = parseTime(getCurrentRemain());
         timeRender.current = getCurrentRemain();
-        setRenderTime({ hour: parse.hours, minute: parse.minutes, secound: parse.seconds, millisecond: parse.milliseconds });
+        console.log({ hour: padZero(parse.hours), minute: padZero(parse.minutes), secound: padZero(parse.seconds), millisecond: padZero(parse.milliseconds, 3) });
+        setRenderTime({ hour: padZero(parse.hours), minute: padZero(parse.minutes), secound: padZero(parse.seconds), millisecond: padZero(parse.milliseconds, 3) });
         const requestAnimationId = requestAnimationFrame(frameTime);
         refId.current = requestAnimationId;
         if (!refRun.current) {
