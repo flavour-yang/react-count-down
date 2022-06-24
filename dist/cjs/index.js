@@ -1,4 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var React = require('react');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
 /*
  * @Author: Y
@@ -61,14 +69,14 @@ function padZero(num, targetLength = 2) {
 const CountDown = (props) => {
     const { time = HOUR, getTime, renderContent, format, actionRender } = props;
     // 暂停时间
-    const countRef = useRef(time);
+    const countRef = React.useRef(time);
     // 获取每次 render 的 time
-    const timeRender = useRef(0);
+    const timeRender = React.useRef(0);
     // 是否暂停
-    const refRun = useRef(true);
+    const refRun = React.useRef(true);
     // 记录 requestAnimation id
-    const refId = useRef(0);
-    const [renderTime, setRenderTime] = useState({
+    const refId = React.useRef(0);
+    const [renderTime, setRenderTime] = React.useState({
         hour: 0,
         minute: 0,
         secound: 0,
@@ -102,7 +110,7 @@ const CountDown = (props) => {
     const getRenderTime = () => {
         return parseTime(timeRender.current);
     };
-    useEffect(() => {
+    React.useEffect(() => {
         requestAnimationFrame(frameTime);
         return () => {
             cancelAnimationFrame(refId.current);
@@ -112,9 +120,9 @@ const CountDown = (props) => {
     if (renderContent) {
         return renderContent({ time: getRenderTime(), stop, start });
     }
-    return (React.createElement(React.Fragment, null,
-        React.createElement("span", null,
-            format ? (formatTime(format, parseTime(timeRender.current))) : (React.createElement("span", null,
+    return (React__default["default"].createElement(React__default["default"].Fragment, null,
+        React__default["default"].createElement("span", null,
+            format ? (formatTime(format, parseTime(timeRender.current))) : (React__default["default"].createElement("span", null,
                 renderTime.hour,
                 ":",
                 renderTime.minute,
@@ -122,10 +130,11 @@ const CountDown = (props) => {
                 renderTime.secound,
                 ":",
                 renderTime.millisecond)),
-            actionRender ? (actionRender({ start, stop, run: refRun.current })) : (React.createElement(React.Fragment, null,
-                React.createElement("button", { onClick: stop }, "stop"),
-                React.createElement("button", { onClick: start }, "start"))))));
+            actionRender ? (actionRender({ start, stop, run: refRun.current })) : (React__default["default"].createElement(React__default["default"].Fragment, null,
+                React__default["default"].createElement("button", { onClick: stop }, "stop"),
+                React__default["default"].createElement("button", { onClick: start }, "start"))))));
 };
 
-export { CountDown, CountDown as default };
+exports.CountDown = CountDown;
+exports["default"] = CountDown;
 //# sourceMappingURL=index.js.map
